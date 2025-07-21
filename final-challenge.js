@@ -56,6 +56,24 @@ function getTopStudent(students) {
     console.log(`Aluno com a maior média: ${bestStudent} (${highestAverage.toFixed(1)})`);
 }
 
+function classAverage(students) {
+    let sumAverage = 0;
+
+    for (let i = 0; i < students.length; i++) {
+        let student = students[i];
+        let studentAverage = averageStudents(student.grades);
+        sumAverage =  sumAverage + studentAverage;
+    }
+
+    let totalAverage = sumAverage / students.length;
+
+    console.log(`Média geral da turma: ${totalAverage.toFixed(1)}`);
+}
+
 printAveragePerStudent(students);
+
 approvedFailed(students);
+
 getTopStudent(students);
+
+classAverage(students);
