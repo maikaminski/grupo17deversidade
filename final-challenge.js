@@ -20,6 +20,24 @@ function printAveragePerStudent(students) {
     }
 }
 
-
+function approvedFailed(students){
+    let approved = 0;
+    let failed = 0;
+    for (let i = 0; i < students.length; i++) {
+        let student = students[i];
+        let average = averageStudents(student.grades);
+        if (average < 70) {
+            console.log(`${student.name} foi reprovado com média ${average.toFixed(1)}`);
+            failed++;
+        }
+        else {
+            console.log(`${student.name} foi aprovado com média ${average.toFixed(1)}`);
+            approved++;
+        }
+    }
+    console.log(`\nTotal de aprovados: ${approved}`);
+    console.log(`Total de reprovados: ${failed}`);
+}
 
 printAveragePerStudent(students);
+approvedFailed(students);
