@@ -71,6 +71,9 @@ function classAverage(students) {
 }
 
 printAveragePerStudent(students);
+
 approvedFailed(students);
+
 getTopStudent(students);
+
 classAverage(students);
