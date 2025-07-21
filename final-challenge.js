@@ -39,5 +39,23 @@ function approvedFailed(students){
     console.log(`Total de reprovados: ${failed}`);
 }
 
+function getTopStudent(students) {
+    let highestAverage = 0;
+    let bestStudent = '';
+
+    for (let i = 0; i < students.length; i++) {
+        const student = students[i];
+        const average = averageStudents(student.grades);
+
+        if (average > highestAverage) {
+            highestAverage = average;
+            bestStudent = student.name;
+        }
+    }
+
+    console.log(`Aluno com a maior média: ${bestStudent} (${highestAverage.toFixed(1)})`);
+}
+
 printAveragePerStudent(students);
 approvedFailed(students);
+getTopStudent(students);
